@@ -19,9 +19,9 @@
 		.then(data=>{
 			let dollar=data["rates"]["INR"]
 			ans.innerHTML=dollar;
-			let rupee=dollar*amt.value;
-			rupee.tofixed(2);
-			ans.innerHTML=rupee;
+			amt_in_dollars=parseFloat(amt.value);
+    			amt_in_rupees= amt_in_dollars*dollar;
+    			ans.innerHTML="\u20b9"+amt_in_rupees.toFixed(2);
 			
 		})
 		.catch(err=>ans.innerHTML="issue"+err);
